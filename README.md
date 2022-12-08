@@ -21,4 +21,5 @@ docker run -d -e ES_METRICS_CLUSTER_URL=http://search1.example.net:9200 \
 <user>/es-monitor:latest
 ```
 ES_METRICS_CLUSTER_URL - Elasticsearch instance in which you want to index the logs.
+
 ES_METRICS_MONITORING_CLUSTER_URL - The URL which logs you want to monitor.
