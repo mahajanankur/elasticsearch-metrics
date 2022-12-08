@@ -1,0 +1,19 @@
+version: '3'
+
+services:   
+  es-monitor:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: es-monitor:latest
+    container_name: es-monitor
+    environment:
+      ES_METRICS_CLUSTER_URL: http://elastic-5.6.16:8045
+      ES_METRICS_INDEX_NAME: es-monitor
+      ES_METRICS_MONITORING_CLUSTER_URL: http://elastic-5.6.16:8045
+    networks:
+      - shared_network
+networks:
+  shared_network:
+    external:
+      name: shared_network
